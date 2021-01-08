@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import {FirstStep} from './components/FirstStep'
 import {SecondStep} from './components/SecondStep'
 import {ThirdStep} from './components/ThirdStep'
@@ -10,6 +10,7 @@ function App() {
 
   const { currentStep, finalData } = useContext(multiStepContext)
   
+ 
   function showStep(step) {
     switch(step) {
       case 1 :
@@ -26,6 +27,7 @@ function App() {
     <div className="App" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <h3 style={{ color: 'orange', textDecoration: 'underline' }}>Multi Step app</h3>
       <div className="center-stepper">
+
         <Stepper style={{ width: '18%'}} activeStep={currentStep - 1} orientation='horizontal' >
           <Step>
             <StepLabel></StepLabel>
