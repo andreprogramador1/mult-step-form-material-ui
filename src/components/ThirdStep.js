@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Button, TextField } from '@material-ui/core'
+import {multiStepContext} from '../StepContext'
 
 export const ThirdStep = () => {
+  const { setStep, userData, setUserData, submitData } = useContext(multiStepContext)
   return(
     <>
       <div>
@@ -14,7 +16,7 @@ export const ThirdStep = () => {
         <TextField label="Contact number" margin="normal" variant="outlined" color="secondary"/>
       </div>
       <div>
-        <Button  variant="contained" color="primary">Next</Button>
+        <Button  variant="contained" onClick={submitData} color="primary">Next</Button>
       </div>
     </>
   );
