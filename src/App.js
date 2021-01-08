@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {FirstStep} from './components/FirstStep'
 import {SecondStep} from './components/SecondStep'
 import {ThirdStep} from './components/ThirdStep'
 import { Step, Stepper, StepLabel } from '@material-ui/core'
+import { multiStepContext } from './StepContext'
 
 function App() {
 
+  const { currentStep, finalData } = useContext(multiStepContext)
   function showStep(step) {
     switch(step) {
       case 1 :
@@ -18,10 +20,11 @@ function App() {
   }
 
   return (
+
     <div className="App" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <h3 style={{ color: 'orange', textDecoration: 'underline' }}>Multi Step app</h3>
       <div className="center-stepper">
-        <Stepper style={{ width: '18%'}} activeStep="1" orientation='horizontal' >
+        <Stepper style={{ width: '18%'}} activeStep={currentStep - 1} orientation='horizontal' >
           <Step>
             <StepLabel></StepLabel>
           </Step>
@@ -33,8 +36,9 @@ function App() {
           </Step>
         </Stepper>
       </div>
-      { showStep(2) }
+      { showStep(currentStep) }
     </div>
+
   );
 }
 
