@@ -11,7 +11,16 @@ export const DisplayData = () => {
       
      }}>
 
-      <input type='text' placeholder='Search' onChange={e => setSearch(e.target.value)} />
+      <input type='text' placeholder='Search' onChange={e => setSearch(e.target.value)} style={{
+            display: 'flex',
+            margin: 'auto',
+            marginTop: '30px',
+            marginBottom: '30px',
+            padding: '10px',
+            borderRadius: '7px',
+            border: '1px solid #ccc',
+            outline: 'none'
+      }}/>
 
       {finalData.filter((user) => {
         return search === '' ? true : user.firstname.toLowerCase().includes(search.toLowerCase())
