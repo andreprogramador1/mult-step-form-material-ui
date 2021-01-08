@@ -1,9 +1,9 @@
-import React, {Children, useState} from 'react'
+import React, { useState} from 'react'
 import App from './App'
 
 export const multiStepContext = React.createContext();
 
-export const StepContext = () => {
+export const StepContext = ({ children }) => {
   const [currentStep, setStep] = useState(1)
   const [userData, setUserData] = useState([])
   const [finalData, setFinalData] = useState([])
@@ -18,7 +18,7 @@ export const StepContext = () => {
   return(
     <>
       <multiStepContext.Provider value={{currentStep, setStep, userData, setUserData, finalData, setFinalData, submitData}}>
-        <App/>
+        {children}
       </multiStepContext.Provider>
     </>
   );
