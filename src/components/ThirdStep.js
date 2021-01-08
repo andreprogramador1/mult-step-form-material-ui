@@ -16,6 +16,7 @@ export const ThirdStep = () => {
         <TextField label="Contact number" margin="normal" variant="outlined" color="secondary"/>
       </div>
       <div>
+        <Button  variant="contained" onClick={() => {setStep(2)}} color="secondary">Back</Button> <span></span>
         <Button  variant="contained" onClick={submitData} color="primary">Next</Button>
       </div>
     </>
