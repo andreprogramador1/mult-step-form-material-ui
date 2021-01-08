@@ -4,6 +4,7 @@ import {SecondStep} from './components/SecondStep'
 import {ThirdStep} from './components/ThirdStep'
 import { Step, Stepper, StepLabel } from '@material-ui/core'
 import { multiStepContext } from './StepContext'
+import {DisplayData} from './components/DisplayData'
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
         </Stepper>
       </div>
       { showStep(currentStep) }
+      <DisplayData/>
     </div>
 
   );

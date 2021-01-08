@@ -7,11 +7,11 @@ export const StepContext = ({ children } ) => {
   // const [userData, setUserData] = useState({})
   const [finalData, setFinalData] = useState([])
 
-  const [userData, setUserData] = useReducer((prev, next) => ({...prev, ...next}), {})
+  const [userData, setUserData] = useReducer((prev, next) => (next ? {...prev, ...next} : {} ), {})
 
   function submitData() {
     setFinalData(finalData=>[...finalData, userData])
-    setUserData('')
+    setUserData(false)
     setStep(1)
     console.log(userData)
   }
