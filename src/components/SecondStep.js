@@ -7,13 +7,13 @@ export const SecondStep = () => {
   return(
     <>
       <div>
-        <TextField label="First name" margin="normal" variant="outlined" color="secondary"/>
+        <TextField label="City" value={userData['city']} onChange={ e => setUserData({...userData, 'city' : e.target.value}) } margin="normal" variant="outlined" color="secondary"/>
       </div>
       <div>
-        <TextField label="Last name" margin="normal" variant="outlined" color="secondary"/>
+        <TextField label="Adress" value={userData['adress']} onChange={ e => setUserData({...userData, 'adress' : e.target.value}) } margin="normal" variant="outlined" color="secondary"/>
       </div>
       <div>
-        <TextField label="Contact number" margin="normal" variant="outlined" color="secondary"/>
+        <TextField label="Number" value={userData['number']} onChange={ e => setUserData({...userData, 'number' : e.target.value}) } margin="normal" variant="outlined" color="secondary"/>
       </div>
       <div>
         <Button  variant="contained" onClick={() => {setStep(1)}} color="secondary">Back</Button><span> </span>
