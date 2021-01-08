@@ -9,7 +9,10 @@ export const StepContext = () => {
   const [finalData, setFinalData] = useState([])
 
   function submitData() {
-
+    setFinalData(finalData=>[...finalData, userData])
+    setUserData('')
+    setStep(1)
+    console.log(userData)
   }
 
   return(
